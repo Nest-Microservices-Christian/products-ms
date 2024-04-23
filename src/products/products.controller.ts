@@ -20,7 +20,7 @@ export class ProductsController {
   }
 
   @MessagePattern({ cmd: 'find_one_product' })
-  findOne(@Payload('id', ParseIntPipe) id: number) {
+  findOne(@Payload() id: number) {
     return this.productsService.findOne(id);
   }
 
